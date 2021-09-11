@@ -18,10 +18,13 @@ public class playercontroller : MonoBehaviour
     public PhysicsSettings physicsSettings = new PhysicsSettings();
 
     public Vector3 _velocity;
+    public float xSpeed = 10;
+
     private Rigidbody _rigidbody;
     private Animator _animator;
     private int _jumpInput = 0;
     private bool _onGround = false;
+    private float _xMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class playercontroller : MonoBehaviour
         Run();
         CheckGround();
         Jump();
+        MoveX();
         _rigidbody.velocity = _velocity;
     }
     void Run(){
@@ -74,9 +78,28 @@ public class playercontroller : MonoBehaviour
             }
         }
     }
+    void MoveX(){
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3 (_xMovement, transform.position.y, transform.position.z),Time.deltaTime*xSpeed);
+    }
     void InputHandling(){
         if(Input.GetKeyDown (KeyCode.Space)){
             _jumpInput = 1;
+        }
+        else if(Input.GetKeyDown(KeyCode.D)){
+            if(_xMovement == 0){
+                _xMovement = 2.5f;
+            } else if (_xMovement == -2.5f){
+                _xMovement = 0;
+            }
+
+        }
+        else if(Input.GetKeyDown(KeyCode.A)){
+            if (_xMovement == 0){
+                _xMovement = -2.5f;
+            } else if(_xMovement == 2.5f){
+                _xMovement =  0;
+            } 
+            
         }
     }
 
