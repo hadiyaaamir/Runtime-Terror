@@ -9,6 +9,7 @@ public class macheteScript : MonoBehaviour
    void OnTriggerEnter(){
        macheteAudio.Play();
        Destroy(this.gameObject);
+       System.Console.WriteLine("working");
    }
    
 }
