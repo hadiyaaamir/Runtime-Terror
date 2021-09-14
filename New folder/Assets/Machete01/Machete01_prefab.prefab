@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3393746}
   - component: {fileID: 2347250}
   - component: {fileID: 1918467471347316251}
+  - component: {fileID: 8229082813074754819}
   m_Layer: 0
   m_Name: Machete01_prefab
   m_TagString: Untagged
@@ -94,3 +95,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65dbf6567d1ef5e489b45304634f03c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  macheteAudio: {fileID: 0}
+--- !u!64 &8229082813074754819
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 841e62620ce5486439ef62580487650d, type: 3}
