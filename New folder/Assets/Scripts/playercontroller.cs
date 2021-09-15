@@ -41,6 +41,7 @@ public class playercontroller : MonoBehaviour
         Run();
         CheckGround();
         Jump();
+        changeAnimation();
         MoveX();
         _rigidbody.velocity = _velocity;
     }
@@ -100,6 +101,29 @@ public class playercontroller : MonoBehaviour
                 _xMovement =  0;
             } 
             
+        }
+    }
+    void changeAnimation(){
+        int energy=Sliderr.slidervalue;
+        if (energy==0){
+             _animator.SetTrigger("Zombie Death");
+             movementSettings.forwardVelocity=0;
+        }
+        else if (energy<=4){
+             _animator.SetTrigger("Injured Walk");
+             movementSettings.forwardVelocity=4;
+        }
+        else if (energy<=8){
+             _animator.SetTrigger("Injured Run");
+             movementSettings.forwardVelocity=5;
+        }
+        else if (energy<=12){
+             _animator.SetTrigger("Running");
+             movementSettings.forwardVelocity=7;
+        }
+        else {
+             _animator.SetTrigger("Running");
+             movementSettings.forwardVelocity=10;
         }
     }
 
