@@ -19,6 +19,7 @@ public class playercontroller : MonoBehaviour
 
     public Vector3 _velocity;
     public float xSpeed = 10;
+    public bool isDead =false;
 
     private Rigidbody _rigidbody;
     private Animator _animator;
@@ -108,6 +109,7 @@ public class playercontroller : MonoBehaviour
         if (energy==0){
              _animator.SetTrigger("Zombie Death");
              movementSettings.forwardVelocity=0;
+             isDead=true;
         }
         else if (energy<=4){
              _animator.SetTrigger("Injured Walk");
@@ -125,6 +127,7 @@ public class playercontroller : MonoBehaviour
              _animator.SetTrigger("Running");
              movementSettings.forwardVelocity=10;
         }
+        
     }
 
 }

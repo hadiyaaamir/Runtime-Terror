@@ -9,8 +9,8 @@ public class macheteScript : MonoBehaviour
    void OnTriggerEnter(){
        macheteAudio.Play();
        Destroy(this.gameObject);
-       
-       Sliderr.slidervalue = Sliderr.slidervalue-1;
+
+       Sliderr.slidervalue--;
    }
    
 }
