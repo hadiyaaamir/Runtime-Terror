@@ -6,19 +6,20 @@ public class humancontroller : MonoBehaviour
 {
 
     private Transform _player;
-    public int speed=10;
-    public int distance=100;
+    public int speed=3;
+    public int distance=10;
     void Start()
     {
-        
+        _player=GameObject.Find("Player").transform;
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!GameObject.find("Player").GetComponent<PlayerController> ().isDead){
+        if(!GameObject.Find("Player").GetComponent<playercontroller> ().isDead){
             if(Vector3.Distance(transform.position,_player.position)<= distance){
-                transform.position= new Vector3 (transform.positon.x,transform.positon.y,transform.positon.z - speed*Time.deltaTime);
+                transform.position= new Vector3 (transform.position.x,transform.position.y,transform.position.z - speed*Time.deltaTime);
             }
         }
     }
