@@ -22,4 +22,11 @@ public class humancontroller : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(){
+      // macheteAudio.Play();
+       Destroy(this.gameObject);
+
+       Sliderr.slidervalue++;
+   }
 }
