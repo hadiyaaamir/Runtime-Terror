@@ -19,7 +19,7 @@ public class playercontroller : MonoBehaviour
 
     public Vector3 _velocity;
     public float xSpeed = 10;
-    public bool isDead =false;
+    public bool isDead = false;
 
     private Rigidbody _rigidbody;
     private Animator _animator;

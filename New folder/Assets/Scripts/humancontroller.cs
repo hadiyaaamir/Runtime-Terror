@@ -8,7 +8,11 @@ public class humancontroller : MonoBehaviour
     private Transform _player;
     private Animator _animator;
     public int speed=8;
-    public int distance=10;
+    public int distance=25;
+
+    public AudioSource bitingAudio;
+    public AudioSource screamingAudio;
+
     void Start()
     {
         _player=GameObject.Find("Player").transform;
@@ -30,9 +34,10 @@ public class humancontroller : MonoBehaviour
    
 
     void OnTriggerEnter(){
-      // macheteAudio.Play();
+        bitingAudio.Play();
+        screamingAudio.Play();
       _animator.SetTrigger("Standing React Death Backward");
-       //Destroy(this.gameObject);
+       Destroy(this.gameObject);
       
        Sliderr.slidervalue+=2;
    }
