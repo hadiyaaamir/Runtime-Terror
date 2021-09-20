@@ -131,12 +131,22 @@ public class playercontroller : MonoBehaviour
         }
         
     }
+
+    int count = 0;
+
     public void Stop(){
       //  finish f = new finish();
         
         if(transform.position.z >= 180){
+            //_animator.SetTrigger("Right Turn");
             
-             _animator.SetTrigger("Macarena Dance");
+            if (count <= 225) {
+                transform.Rotate(Vector3.up, Time.deltaTime * 40);
+                count++;
+            }
+            else { //remove?
+            _animator.SetTrigger("Macarena Dance");
+            }
             movementSettings.forwardVelocity = 0; 
             
         }
