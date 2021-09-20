@@ -140,13 +140,13 @@ public class playercontroller : MonoBehaviour
         if(transform.position.z >= 180){
             //_animator.SetTrigger("Right Turn");
             
-            if (count <= 225) {
+            if (count <= 105) {
                 transform.Rotate(Vector3.up, Time.deltaTime * 40);
                 count++;
             }
-            else { //remove?
+             //remove?
             _animator.SetTrigger("Macarena Dance");
-            }
+            
             movementSettings.forwardVelocity = 0; 
             
         }
