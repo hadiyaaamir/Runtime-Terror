@@ -44,6 +44,7 @@ public class playercontroller : MonoBehaviour
         Jump();
         changeAnimation();
         MoveX();
+        Stop();
         _rigidbody.velocity = _velocity;
     }
     void Run(){
@@ -83,6 +84,7 @@ public class playercontroller : MonoBehaviour
     void MoveX(){
         transform.position = Vector3.MoveTowards(transform.position, new Vector3 (_xMovement, transform.position.y, transform.position.z),Time.deltaTime*xSpeed);
     }
+   
     void InputHandling(){
         if(Input.GetKeyDown (KeyCode.Space)){
             _jumpInput = 1;
@@ -128,6 +130,16 @@ public class playercontroller : MonoBehaviour
              movementSettings.forwardVelocity=10;
         }
         
+    }
+    public void Stop(){
+      //  finish f = new finish();
+        
+        if(transform.position.z >= 180){
+            
+             _animator.SetTrigger("Macarena Dance");
+            movementSettings.forwardVelocity = 0; 
+            
+        }
     }
 
 }

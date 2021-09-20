@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class finish : MonoBehaviour
 {
-    void OnTriggerEnter(){
-       playercontroller._velocity = Vector3.zero;
+    public bool fin;
+     void OnTriggerEnter(){
+         fin = true;
        }
 }
