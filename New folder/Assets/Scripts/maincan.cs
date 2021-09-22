@@ -8,7 +8,7 @@ public class maincan : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-     Application.LoadLevel(Application.loadLevel);
+     Application.LoadLevel(Application.loadedLevel);
      mainCanvas.SetActive(false);
      Time.timeScale = 1;   
     }

@@ -7,11 +7,11 @@ public class MainCanvas : MonoBehaviour
 {
     public GameObject mainCanvas;
     // Start is called before the first frame update
-    void Start()
-    {
-         mainCanvas.SetActive(true);
-        Time.timeScale = 0;
-    }
+    // void Start()
+    // {
+    //      mainCanvas.SetActive(true);
+    //     Time.timeScale = 0;
+    // }
 
     // Update is called once per frame
     public void StartGame()
