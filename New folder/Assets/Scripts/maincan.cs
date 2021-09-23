@@ -10,9 +10,11 @@ public class maincan : MonoBehaviour
     public GameObject gameOver;
     public GameObject youWin;
 
-    //public playercontroller player;
+    public playercontroller player;
 
-    private Scene scene;
+
+
+    //private Scene scene;
 
     // Start is called before the first frame update
     
@@ -23,7 +25,7 @@ public class maincan : MonoBehaviour
         mainCanvas.SetActive(true);
         Time.timeScale = 0;
 
-        scene = SceneManager.GetActiveScene();
+        //scene = ;
     }
 
     // Update is called once per frame
@@ -40,9 +42,12 @@ public class maincan : MonoBehaviour
     }
 
     public void Restart() {
-        //Time.timeScale = 1;
-        //Application.LoadLevel(scene.name);
-        SceneManager.LoadScene("rt");
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // player.starttt();
+         gameOver.SetActive(false);
+        //player.changeAnimation();
     }
 
     

@@ -36,7 +36,16 @@ public class playercontroller : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _velocity = Vector3.zero;
+
         hasWon = false;
+
+        transform.position = new Vector3(0,0,-5);
+        Sliderr.slidervalue = 10;
+
+    }
+
+    public void starttt() {
+        Start();
     }
 
     // Update is called once per frame
@@ -111,16 +120,12 @@ public class playercontroller : MonoBehaviour
             
         }
     }
-    void changeAnimation(){
+    public void changeAnimation(){
         int energy=Sliderr.slidervalue;
         if (energy==0){
             _animator.SetTrigger("Zombie Death");
-            //gameOver.SetActive(true);
             movementSettings.forwardVelocity=0;
             isDead=true;
-
-            
-            //Time.timeScale = 0;
 
         }
         else if (energy<=4){
