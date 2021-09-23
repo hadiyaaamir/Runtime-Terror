@@ -8,6 +8,7 @@ public class Sliderr : MonoBehaviour
 
     public static int slidervalue = 10;
     public Slider slider;
+    public GameObject youWin;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +20,8 @@ public class Sliderr : MonoBehaviour
     void Update()
     {
         slider.value = slidervalue;
+        if (playercontroller.hasWon) {
+            youWin.SetActive(true);
+        }
     }
 }

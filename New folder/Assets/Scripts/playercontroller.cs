@@ -27,12 +27,16 @@ public class playercontroller : MonoBehaviour
     private bool _onGround = false;
     private float _xMovement;
 
+    //public GameObject youWin;
+    public static bool hasWon; 
+
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _velocity = Vector3.zero;
+        hasWon = false;
     }
 
     // Update is called once per frame
@@ -45,6 +49,7 @@ public class playercontroller : MonoBehaviour
         changeAnimation();
         MoveX();
         Stop();
+        
         _rigidbody.velocity = _velocity;
     }
     void Run(){
@@ -109,9 +114,14 @@ public class playercontroller : MonoBehaviour
     void changeAnimation(){
         int energy=Sliderr.slidervalue;
         if (energy==0){
-             _animator.SetTrigger("Zombie Death");
-             movementSettings.forwardVelocity=0;
-             isDead=true;
+            _animator.SetTrigger("Zombie Death");
+            //gameOver.SetActive(true);
+            movementSettings.forwardVelocity=0;
+            isDead=true;
+
+            
+            //Time.timeScale = 0;
+
         }
         else if (energy<=4){
              _animator.SetTrigger("Injured Walk");
@@ -138,18 +148,20 @@ public class playercontroller : MonoBehaviour
       //  finish f = new finish();
         
         if(transform.position.z >= 180){
-            //_animator.SetTrigger("Right Turn");
             
             if (count <= 105) {
                 transform.Rotate(Vector3.up, Time.deltaTime * 40);
                 count++;
             }
-             //remove?
+             
             _animator.SetTrigger("Macarena Dance");
             
             movementSettings.forwardVelocity = 0; 
+            //youWin.SetActive(true);
+            hasWon = true;
             
         }
     }
+
 
 }
