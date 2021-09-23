@@ -29,6 +29,7 @@ public class playercontroller : MonoBehaviour
 
     //public GameObject youWin;
     public static bool hasWon; 
+    //public AudioSource macarena;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,8 @@ public class playercontroller : MonoBehaviour
 
         transform.position = new Vector3(0,0,-5);
         Sliderr.slidervalue = 10;
+
+        //macarena.Stop();
 
     }
 
@@ -160,6 +163,7 @@ public class playercontroller : MonoBehaviour
             }
              
             _animator.SetTrigger("Macarena Dance");
+           // macarena.Play();
             
             movementSettings.forwardVelocity = 0; 
             //youWin.SetActive(true);

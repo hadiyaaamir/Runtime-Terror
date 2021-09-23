@@ -10,6 +10,8 @@ public class Sliderr : MonoBehaviour
     public Slider slider;
     public GameObject youWin;
 
+    //public AudioSource macarena;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Sliderr : MonoBehaviour
         slider.value = slidervalue;
         if (playercontroller.hasWon) {
             youWin.SetActive(true);
+            //macarena.Play();
         }
     }
 }

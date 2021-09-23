@@ -10,7 +10,7 @@ public class maincan : MonoBehaviour
     public GameObject gameOver;
     public GameObject youWin;
 
-    public playercontroller player;
+    //public playercontroller player;
 
 
 
