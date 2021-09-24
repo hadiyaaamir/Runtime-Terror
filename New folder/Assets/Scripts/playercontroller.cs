@@ -32,6 +32,7 @@ public class playercontroller : MonoBehaviour
     public Vector3 _velocity;
     public float xSpeed = 10;
     public bool isDead = false;
+    public bool mac = false;
 
     private Rigidbody _rigidbody;
     private Animator _animator;
@@ -51,6 +52,7 @@ public class playercontroller : MonoBehaviour
         _velocity = Vector3.zero;
 
         hasWon = false;
+        mac = false;
 
         transform.position = new Vector3(0,0,-5);
         Sliderr.slidervalue = 10;
@@ -181,6 +183,7 @@ public class playercontroller : MonoBehaviour
             movementSettings.forwardVelocity = 0; 
             //youWin.SetActive(true);
             hasWon = true;
+            //mac = true;
             
         }
     }

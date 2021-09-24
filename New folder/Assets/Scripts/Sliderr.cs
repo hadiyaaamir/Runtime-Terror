@@ -9,7 +9,7 @@ public class Sliderr : MonoBehaviour
     public static int slidervalue = 10;
     public Slider slider;
     public GameObject youWin;
-
+    
     //public AudioSource macarena;
 
     // Start is called before the first frame update

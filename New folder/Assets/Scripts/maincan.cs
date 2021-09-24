@@ -9,6 +9,8 @@ public class maincan : MonoBehaviour
     public GameObject playerCanvas;
     public GameObject gameOver;
     public GameObject youWin;
+    public AudioSource brain;
+    public AudioSource background;
 
     //public playercontroller player;
 
@@ -19,7 +21,7 @@ public class maincan : MonoBehaviour
     // Start is called before the first frame update
     
     void Start(){
-        playerCanvas.SetActive(false);
+        //playerCanvas.SetActive(false);
         gameOver.SetActive(false);
         youWin.SetActive(false);
         mainCanvas.SetActive(true);
@@ -38,7 +40,9 @@ public class maincan : MonoBehaviour
     {
         mainCanvas.SetActive(false);
         playerCanvas.SetActive(true);
-        Time.timeScale = 1;   
+        Time.timeScale = 1;  
+        brain.Stop(); 
+        background.Play();
     }
 
     public void Restart() {
