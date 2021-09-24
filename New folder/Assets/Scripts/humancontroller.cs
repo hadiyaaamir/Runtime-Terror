@@ -39,6 +39,8 @@ public class humancontroller : MonoBehaviour
       _animator.SetTrigger("Standing React Death Backward");
        Destroy(this.gameObject);
       
-       Sliderr.slidervalue+=2;
+      if(Sliderr.slidervalue <20) {
+        Sliderr.slidervalue+=2;
+      }
    }
 }

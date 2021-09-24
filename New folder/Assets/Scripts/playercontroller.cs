@@ -2,6 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+
+BACKGOUND AUDIO:
+
+Chase by Alexander Nakarada | https://www.serpentsoundstudios.com
+Music promoted by https://www.chosic.com/free-music/all/
+Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/ 
+
+*/
+
 public class playercontroller : MonoBehaviour
 {
     [System.Serializable]
@@ -50,6 +62,7 @@ public class playercontroller : MonoBehaviour
     public void starttt() {
         Start();
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
