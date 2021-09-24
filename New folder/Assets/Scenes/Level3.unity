@@ -2925,7 +2925,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 6, z: 1}
+  m_Size: {x: 1, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &611051026
 MeshRenderer:
@@ -3071,7 +3071,7 @@ PrefabInstance:
     - target: {fileID: 3504451817107267175, guid: 2761d4f21c0de544e8b41c59610e1ffd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 255436391f9524147a37a599920b6a29, type: 2}
+      objectReference: {fileID: 2100000, guid: 37219d2a2c828b34db49ecd614e79886, type: 2}
     - target: {fileID: 3606030376821327720, guid: 2761d4f21c0de544e8b41c59610e1ffd, type: 3}
       propertyPath: m_RootOrder
       value: 18

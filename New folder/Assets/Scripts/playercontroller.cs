@@ -40,6 +40,10 @@ public class playercontroller : MonoBehaviour
     private bool _onGround = false;
     private float _xMovement;
 
+    //touch controls
+    private Touch _sTouch;
+    bool _hasSwiped = false;
+
     //public GameObject youWin;
     public static bool hasWon; 
     //public AudioSource macarena;
@@ -69,6 +73,7 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        TouchHandling();
         InputHandling();
         Run();
         CheckGround();
@@ -136,6 +141,62 @@ public class playercontroller : MonoBehaviour
                 _xMovement =  0;
             } 
             
+        }
+    }
+
+    void TouchHandling(){
+        foreach(Touch t in Input.touches){
+            //begin
+            if(t.phase == TouchPhase.Began){
+                _sTouch = t;
+            }
+            //Moves
+            else if(t.phase == TouchPhase.Moved && !_hasSwiped){
+                float Xswipe = _sTouch.position.x - t.position.x;
+                float Yswipe = _sTouch.position.y - t.position.y;
+                float Distance = Mathf.Sqrt(Xswipe * Xswipe) + Mathf.Sqrt(Yswipe * Yswipe);
+                bool IsVertical = false;
+                if(Mathf.Abs(Xswipe) < Mathf.Abs(Yswipe)){
+                    IsVertical = true;
+                }
+                if(Distance > 5f){
+                    if(IsVertical){
+                        if(Yswipe < 0) {//jumpp
+                        _jumpInput = 1; 
+                        }
+                        
+                    }
+                    else if(!IsVertical){
+                        if(Xswipe < 0){//right
+                            if(_xMovement == 0){
+                                _xMovement = 2.5f;
+                                _animator.SetTrigger("RightMove");
+
+                            }
+                            else if(_xMovement == -2.5f){//player is on the left
+                                _xMovement = 0;
+                                _animator.SetTrigger("RightMove");
+                            }
+                        }
+                        else if(Xswipe > 0){ //left
+                            if(_xMovement == 0){ //player is in the middle
+                                _xMovement = -2.5f;
+                                _animator.SetTrigger("LeftMove");
+                            }
+                            else if(_xMovement == 2.5f){ //player is in the right
+                                _xMovement = 0; 
+                                _animator.SetTrigger("LeftMove");
+                            }
+                        }
+                    }
+                    _hasSwiped = true;
+                }
+            }
+            else if(t.phase == TouchPhase.Ended){
+                _sTouch = new Touch();
+                _hasSwiped = false;
+
+            }
         }
     }
     public void changeAnimation(){
