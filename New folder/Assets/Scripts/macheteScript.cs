@@ -6,6 +6,7 @@ public class macheteScript : MonoBehaviour
 {
    public AudioSource macheteAudio;
    public GameObject gameOver;
+   public AudioSource death;
    
    void OnTriggerEnter(){
        macheteAudio.Play();
@@ -14,6 +15,7 @@ public class macheteScript : MonoBehaviour
        Sliderr.slidervalue--;
        if(Sliderr.slidervalue == 0) {
            gameOver.SetActive(true);
+           death.Play();
         }
    }
    

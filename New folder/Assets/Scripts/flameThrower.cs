@@ -6,7 +6,9 @@ public class flameThrower : MonoBehaviour
 {
     // Start is called before the first frame update
     public AudioSource zombieGasp;
+    public AudioSource death;
     public GameObject gameOver;
+
    
    void OnTriggerEnter(){
        zombieGasp.Play();
@@ -14,6 +16,7 @@ public class flameThrower : MonoBehaviour
 
        if(Sliderr.slidervalue == 0) {
            gameOver.SetActive(true);
+           death.Play();
         }
    }
 }
