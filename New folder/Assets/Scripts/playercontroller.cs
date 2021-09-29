@@ -219,7 +219,7 @@ public class playercontroller : MonoBehaviour
              _animator.SetTrigger("Running");
              movementSettings.forwardVelocity=7;
         }
-        else {
+        else if (energy > 12 && energy <= 20) {
              _animator.SetTrigger("Running");
              movementSettings.forwardVelocity=10;
         }
